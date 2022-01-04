@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+option go_package = ".;scorerpb";
+
+package scorer;
+
+service Scorer {
+    rpc Score(InferenceRequest) returns (InferenceResponse) {}
+    rpc StreamingRequestScore(stream InferenceRequest) returns (InferenceResponse) {}
+    rpc StreamingResponseScore(InferenceRequest) returns (stream InferenceResponse) {}
+    rpc BidirectionalScore(stream InferenceRequest) returns (stream InferenceResponse) {}
+}
+
+message InferenceRequest {
+    string prompt = 1;
+}
+
+message InferenceResponse {
+    string result = 1;
+}

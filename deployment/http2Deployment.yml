@@ -1,0 +1,24 @@
+$schema: https://azuremlschemas.azureedge.net/latest/managedOnlineDeployment.schema.json
+name: blue
+endpoint_name: joon-grpc1
+environment:
+  name: grpc
+  version: 2
+  # This needs to be workspace ACR
+  image: 6f03fe9ab75b4d839b18fd0588c370d0.azurecr.io/joongrpc:1
+  inference_config:
+    liveness_route:
+      port: 5001
+      path: /healthz
+    readiness_route:
+      port: 5001
+      path: /healthz
+    scoring_route:
+      port: 5000
+      path: /
+instance_type: Standard_F2s_v2
+instance_count: 3
+request_settings:
+  request_timeout_ms: 5000
+properties:
+  CustomImage_OsImageId: "/subscriptions/d511f82f-71ba-49a4-8233-d7be8a3650f4/resourceGroups/mire2etesting/providers/Microsoft.Compute/galleries/vmagent_gallery/images/imgDef-vmagent-Gen2/versions/1.1.351827"
