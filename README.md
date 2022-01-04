@@ -4,7 +4,7 @@ This is to try out a grpc model with managed endpoints
 
 ## Steps
   1. Clone the repo
-	1. Create an AML workspace. Remeber the ACR name that was created for the workspace.
+  1. Create an AML workspace. Remember the ACR name that was created for the workspace.
   1. Build the GRPC model image
       ```sh
       docker build -t yourworkspaceacr.azurecr.io/joongrpc:1 -f ./Dockerfile .
