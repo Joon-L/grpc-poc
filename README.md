@@ -1,4 +1,4 @@
 # grpc-poc
 
-This is to try out a grpc server and client
+This is to try out a grpc model with managed endpoints
 
