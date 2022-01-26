@@ -1,5 +1,5 @@
 $schema: https://azuremlschemas.azureedge.net/latest/managedOnlineEndpoint.schema.json
-name: joon-grpc1
+name: joon-grpc2
 auth_mode: key
 properties:
   MIR_VMAGENT_DEBUG_MIR_MODEL_USE_HTTP2: "true"
